@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: edunet-backend
+
+  datasource:
+    url: jdbc:h2:file:./data/edunet;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+  error:
+    include-message: always
+
+logging:
+  level:
+    root: INFO
+    com.edunet: DEBUG
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:3v7QmG8hK2pX9sL4nD6rT1yU5iO0aS7dF8gH9jK4lZ2xC1vB5nM6qW8eR3tY7uP9sA2dF5gH8jK1}
+    expiration: 86400000  # 24 hours

@@ -29,15 +29,16 @@ yarn-error.log*
 .DS_Store
 Thumbs.db
 
-# Uploads and environment variables
+# Uploads and secrets
 uploads/
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+!.env.example
 
 # Temporary files
 *.swp
 *~
-dfyewuqiwejkqn
+
